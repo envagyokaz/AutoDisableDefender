@@ -6,7 +6,6 @@ namespace AutoDisbleDefender
     {
         static void Main(string[] args)
         {
-            
             GetEnviromentVariable();
         }
 
@@ -21,9 +20,7 @@ namespace AutoDisbleDefender
             else
             {
                 Console.WriteLine("OK");
-                //SetEnviromentVariable();
             }
-            //Console.WriteLine(path);
         }
 
         static void SetEnviromentVariable()
@@ -33,14 +30,13 @@ namespace AutoDisbleDefender
                 Process process = new Process();
                 process.StartInfo.FileName = "cmd.exe";
                 process.StartInfo.Arguments = "/c reg add \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\" /v DisableAntiSpyware /t REG_DWORD /d 1 /f";
-                //run with admin rights
-                process.StartInfo.Verb = "runas";
                 process.Start();
                 process.WaitForExit();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                Console.ReadKey();
             }
         }
 

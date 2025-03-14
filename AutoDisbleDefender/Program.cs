@@ -7,6 +7,7 @@ namespace AutoDisbleDefender
         static void Main(string[] args)
         {
             GetEnviromentVariable();
+            Console.ReadKey();
         }
 
         static void GetEnviromentVariable()

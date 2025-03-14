@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Reflection.Metadata.Ecma335;
 
 namespace AutoDisbleDefender
 {
@@ -12,7 +13,6 @@ namespace AutoDisbleDefender
 
         static void GetEnviromentVariable()
         {
-            string path =Environment.GetEnvironmentVariable("\\HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows Defender", EnvironmentVariableTarget.Machine);
             bool existsInMachine = CheckEnvironmentVariable("DisableAntiSpyware", EnvironmentVariableTarget.Machine);
             if (!existsInMachine)
             {
@@ -20,7 +20,9 @@ namespace AutoDisbleDefender
             }
             else
             {
-                Console.WriteLine("OK");
+                { }
+                //Console.WriteLine("OK");
+                
             }
         }
 
